@@ -61,23 +61,23 @@ export default function Home() {
   }, [nodes]);
 
   const styles = {
-    NameHeaderCell: "py-2.5 pl-4 pr-3 text-left text-sm font-bold sm:pl-6 md:pl-0 bg-cyan-500 text-white drop-shadow-lg leading-3",
+    NameHeaderCell: "py-2.5 pl-4 pr-3 text-left text-sm font-bold sm:pl-6 md:pl-0 bg-cyan-700 text-white drop-shadow-lg leading-3",
     StatHeaderCell: "py-2.5 px-3 text-sm font-bold bg-cyan-500 text-white drop-shadow-lg leading-3",
     NameFooterCell: "py-3 pl-4 pr-3 text-left text-md font-bold sm:pl-6 md:pl-0 bg-cyan-700 text-white drop-shadow-lg leading-3",
     StatFooterCell: "py-3 px-3 text-md font-bold bg-cyan-700 text-white drop-shadow-lg leading-3",
     NameCell: (isDiamond, isEmerald, isOlympus) => classNames({
       "text-left whitespace-nowrap py-2 pl-4 pr-3 text-sm font-medium sm:pl-6 md:pl-0 font-semibold ": true,
       "bg-cyan-500 text-white": isDiamond,
-      "bg-green-500 text-white": isEmerald,
-      "bg-orange-500 text-white": isOlympus,
-      "bg-gray-100 text-gray-600": !isEmerald && !isDiamond && !isOlympus
+      "bg-emerald-500 text-white": isEmerald,
+      "bg-orange-500 text-white border-t-2 border-gray-500": isOlympus,
+      "bg-gray-100 text-gray-600 border-t-2 border-gray-400": !isEmerald && !isDiamond && !isOlympus
     }),
     StatCell: (isDiamond, isEmerald, isOlympus) => classNames({
-      "whitespace-nowrap py-2 px-3 text-sm text-black font-semibold border border-slate-300": true,
+      "whitespace-nowrap py-2 px-3 text-sm text-black font-semibold": true,
       "bg-cyan-200 text-cyan-800": isDiamond,
-      "bg-green-200 text-green-800": isEmerald,
-      "bg-orange-200 text-orange-800": isOlympus,
-      "bg-gray-50 text-gray-800": !isEmerald && !isDiamond && !isOlympus
+      "bg-emerald-200 text-emerald-800": isEmerald,
+      "bg-orange-200 text-orange-800 border-t-2 border-gray-400": isOlympus,
+      "bg-gray-50 text-gray-800 border-t-2 border-gray-400": !isEmerald && !isDiamond && !isOlympus
     })
   };
 
@@ -153,46 +153,46 @@ export default function Home() {
             <section className="overflow-x-auto drop-shadow-lg mb-2">
               <form onSubmit={handleSubmit(onSubmit)}>
                 <table
-                  className="min-w-full divide-y divide-gray-300 text-center rounded overflow-hidden border border-slate-500">
+                  className="min-w-full divide-y divide-gray-300 text-center rounded overflow-hidden">
                   <thead>
                   <tr>
                     <th scope="col" className={styles.NameHeaderCell}>
                       <span className="pl-4">Name</span>
                     </th>
-                    <th scope="col" className={styles.StatHeaderCell}>
+                    <th scope="col" className={styles.StatHeaderCell + " bg-sky-600 border-l-2 border-gray-400"}>
                       Node<br/>Count
                     </th>
-                    <th scope="col" className={styles.StatHeaderCell}>
+                    <th scope="col" className={styles.StatHeaderCell + " bg-sky-600"}>
                       Cost<br/>POLAR
                     </th>
-                    <th scope="col" className={styles.StatHeaderCell}>
+                    <th scope="col" className={styles.StatHeaderCell + " bg-sky-600"}>
                       Reward<br/>POLAR
                     </th>
-                    <th scope="col" className={styles.StatHeaderCell}>
+                    <th scope="col" className={styles.StatHeaderCell + " bg-indigo-500 border-l-2 border-gray-400"}>
                       ROI<br/>%
                     </th>
-                    <th scope="col" className={styles.StatHeaderCell}>
+                    <th scope="col" className={styles.StatHeaderCell + " bg-indigo-500"}>
                       ROI<br/>Days
                     </th>
-                    <th scope="col" className={styles.StatHeaderCell}>
+                    <th scope="col" className={styles.StatHeaderCell + " bg-orange-600 border-l-2 border-gray-400"}>
                       Pre ROI<br/>Tax
                     </th>
-                    <th scope="col" className={styles.StatHeaderCell}>
+                    <th scope="col" className={styles.StatHeaderCell + " bg-orange-600"}>
                       Pre ROI<br/>
                       POLAR
                     </th>
-                    <th scope="col" className={styles.StatHeaderCell}>
+                    <th scope="col" className={styles.StatHeaderCell + " bg-orange-600"}>
                       Pre ROI<br/>
                       $
                     </th>
-                    <th scope="col" className={styles.StatHeaderCell}>
+                    <th scope="col" className={styles.StatHeaderCell + " bg-green-600 border-l-2 border-gray-400"}>
                       Post ROI<br/>Tax
                     </th>
-                    <th scope="col" className={styles.StatHeaderCell}>
+                    <th scope="col" className={styles.StatHeaderCell + " bg-green-600"}>
                       Post ROI<br/>
                       POLAR
                     </th>
-                    <th scope="col" className={styles.StatHeaderCell}>
+                    <th scope="col" className={styles.StatHeaderCell + " bg-green-600"}>
                       Post ROI<br/>
                       $
                     </th>
@@ -221,7 +221,7 @@ export default function Home() {
                           <td className={styles.NameCell(isDiamond, isEmerald, isOlympus)}>
                             <span className="pl-4">{n.name}</span>
                           </td>
-                          <td className={styles.StatCell(isDiamond, isEmerald, isOlympus)}>
+                          <td className={styles.StatCell(isDiamond, isEmerald, isOlympus) + " border-l-2 border-gray-400"}>
                             <div className="rounded overflow-hidden">
                               <input className="w-10 overflow-hidden text-center font-bold" name={n.name}
                                      onChange={e => handleCountChange(e, n.id)} value={count}
@@ -230,9 +230,9 @@ export default function Home() {
                           </td>
                           <td className={styles.StatCell(isDiamond, isEmerald, isOlympus)}>{cost}</td>
                           <td className={styles.StatCell(isDiamond, isEmerald, isOlympus)}>{reward}</td>
-                          <td className={styles.StatCell(isDiamond, isEmerald, isOlympus)}>{roiPercent}%</td>
+                          <td className={styles.StatCell(isDiamond, isEmerald, isOlympus) + " border-l-2 border-gray-400"}>{roiPercent}%</td>
                           <td className={styles.StatCell(isDiamond, isEmerald, isOlympus)}>{roiDays}</td>
-                          <td className={styles.StatCell(isDiamond, isEmerald, isOlympus)}>{preTax}%</td>
+                          <td className={styles.StatCell(isDiamond, isEmerald, isOlympus) + " border-l-2 border-gray-400"}>{preTax}%</td>
                           <td className={styles.StatCell(isDiamond, isEmerald, isOlympus)}>{dailyPre}</td>
                           <td className={styles.StatCell(isDiamond, isEmerald, isOlympus)}>
                             <div className="flex flex-row justify-between">
@@ -240,7 +240,7 @@ export default function Home() {
                               <div>{dailyPreUSD.toFixed(2)}</div>
                             </div>
                           </td>
-                          <td className={styles.StatCell(isDiamond, isEmerald, isOlympus)}>{postTax}%</td>
+                          <td className={styles.StatCell(isDiamond, isEmerald, isOlympus) + " border-l-2 border-gray-400"}>{postTax}%</td>
                           <td className={styles.StatCell(isDiamond, isEmerald, isOlympus)}>{dailyPost}</td>
                           <td className={styles.StatCell(isDiamond, isEmerald, isOlympus)}>
                             <div className="flex flex-row justify-between">
@@ -258,30 +258,30 @@ export default function Home() {
                     <th scope="col" className={styles.NameFooterCell}>
                       <p className="text-right pl-4">Totals</p>
                     </th>
-                    <th scope="col" className={styles.StatFooterCell}>
+                    <th scope="col" className={styles.StatFooterCell + " bg-sky-600 border-l-2 border-gray-400"}>
                       {totals.count}
                     </th>
-                    <th scope="col" className={styles.StatFooterCell}>
+                    <th scope="col" className={styles.StatFooterCell + " bg-sky-600"}>
                       {totals.cost}
                     </th>
-                    <th scope="col" className={styles.StatFooterCell}/>
-                    <th scope="col" className={styles.StatFooterCell}/>
-                    <th scope="col" className={styles.StatFooterCell}/>
-                    <th scope="col" className={styles.StatFooterCell}/>
-                    <th scope="col" className={styles.StatFooterCell}>
+                    <th scope="col" className={styles.StatFooterCell + " bg-sky-600"}/>
+                    <th scope="col" className={styles.StatFooterCell + " bg-indigo-500 border-l-2 border-gray-400"}/>
+                    <th scope="col" className={styles.StatFooterCell + " bg-indigo-500"}/>
+                    <th scope="col" className={styles.StatFooterCell + " bg-orange-600 border-l-2 border-gray-400"}/>
+                    <th scope="col" className={styles.StatFooterCell + " bg-orange-600"}>
                       {accurateRoundNumber(totals.totalPreRoiPolar)}
                     </th>
-                    <th scope="col" className={styles.StatFooterCell}>
+                    <th scope="col" className={styles.StatFooterCell + " bg-orange-600"}>
                       <div className="flex flex-row justify-between">
                         <div>$</div>
                         <div>{totals.totalPreRoiUSD.toFixed(2)}</div>
                       </div>
                     </th>
-                    <th scope="col" className={styles.StatFooterCell}/>
-                    <th scope="col" className={styles.StatFooterCell}>
+                    <th scope="col" className={styles.StatFooterCell + " bg-green-600 border-l-2 border-gray-400"}/>
+                    <th scope="col" className={styles.StatFooterCell + " bg-green-600"}>
                       {accurateRoundNumber(totals.totalPostRoiPolar)}
                     </th>
-                    <th scope="col" className={styles.StatFooterCell}>
+                    <th scope="col" className={styles.StatFooterCell + " bg-green-600"}>
                       <div className="flex flex-row justify-between">
                         <div>$</div>
                         <div>{totals.totalPostRoiUSD.toFixed(2)}</div>

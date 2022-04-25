@@ -120,7 +120,8 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="flex flex-col justify-center items-center">
+          <a href="https://twitter.com/ThisIsRuddy" target="_blank" rel="noreferrer"
+             className="flex flex-col justify-center items-center">
             <div className="rounded-full overflow-hidden w-20 h-20 mb-1 drop-shadow-lg">
               <Image src="/thisisruddy.png" width={100} height={100}/>
             </div>
@@ -129,7 +130,7 @@ export default function Home() {
               <br/>
               ThisIsRuddy!😁
             </p>
-          </div>
+          </a>
         </header>
 
         {nodes &&
@@ -341,9 +342,12 @@ export default function Home() {
         }
 
         <footer className="mt-4">
-          <p className="font-bold text-white text-center drop-shadow-lg">
-            Made by ThisIsRuddy, find me in the Polar Discord with the rest of the POLAR Fam and say hi! 😁
-          </p>
+          <a href="https://discord.gg/c54JAmQd" target="_blank" rel="noreferrer">
+            <p className="font-bold text-white text-center drop-shadow-lg">
+              Made by ThisIsRuddy, click me to join the POLAR Discord server with the rest of the POLAR Fam and say hi!
+              😁
+            </p>
+          </a>
         </footer>
       </div>
     </div>

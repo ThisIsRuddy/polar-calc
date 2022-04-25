@@ -264,7 +264,9 @@ export default function Home() {
                     <th scope="col" className={styles.StatFooterCell + " bg-sky-600"}>
                       {totals.cost}
                     </th>
-                    <th scope="col" className={styles.StatFooterCell + " bg-sky-600"}/>
+                    <th scope="col" className={styles.StatFooterCell + " bg-sky-600"}>
+                      {totals.reward.toFixed(2)}
+                    </th>
                     <th scope="col" className={styles.StatFooterCell + " bg-indigo-500 border-l-2 border-gray-400"}/>
                     <th scope="col" className={styles.StatFooterCell + " bg-indigo-500"}/>
                     <th scope="col" className={styles.StatFooterCell + " bg-orange-600 border-l-2 border-gray-400"}/>

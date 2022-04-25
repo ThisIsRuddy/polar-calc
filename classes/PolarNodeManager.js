@@ -38,6 +38,7 @@ class PolarNodeManager {
     const results = {
       count: 0,
       cost: 0,
+      reward: 0,
       totalPreRoiPolar: 0,
       totalPreRoiUSD: 0,
       totalPostRoiPolar: 0,
@@ -47,6 +48,7 @@ class PolarNodeManager {
     nodes.forEach(n => {
       results.count += n.count;
       results.cost += n.cost;
+      results.reward += n.reward * n.count;
       results.totalPreRoiPolar += n.totalPreRoiPolar;
       results.totalPreRoiUSD += n.totalPreRoiUSD;
       results.totalPostRoiPolar += n.totalPostRoiPolar;

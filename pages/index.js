@@ -16,6 +16,7 @@ export default function Home() {
   const [totals, setTotals] = useState({
     count: 0,
     cost: 0,
+    reward: 0,
     totalPreRoiPolar: 0,
     totalPreRoiUSD: 0,
     totalPostRoiPolar: 0,
@@ -221,7 +222,8 @@ export default function Home() {
                           <td className={styles.NameCell(isDiamond, isEmerald, isOlympus)}>
                             <span className="pl-4">{n.name}</span>
                           </td>
-                          <td className={styles.StatCell(isDiamond, isEmerald, isOlympus) + " border-l-2 border-gray-400"}>
+                          <td
+                            className={styles.StatCell(isDiamond, isEmerald, isOlympus) + " border-l-2 border-gray-400"}>
                             <div className="rounded overflow-hidden">
                               <input className="w-10 overflow-hidden text-center font-bold" name={n.name}
                                      onChange={e => handleCountChange(e, n.id)} value={count}
@@ -230,9 +232,13 @@ export default function Home() {
                           </td>
                           <td className={styles.StatCell(isDiamond, isEmerald, isOlympus)}>{cost}</td>
                           <td className={styles.StatCell(isDiamond, isEmerald, isOlympus)}>{reward}</td>
-                          <td className={styles.StatCell(isDiamond, isEmerald, isOlympus) + " border-l-2 border-gray-400"}>{roiPercent}%</td>
+                          <td
+                            className={styles.StatCell(isDiamond, isEmerald, isOlympus) + " border-l-2 border-gray-400"}>{roiPercent}%
+                          </td>
                           <td className={styles.StatCell(isDiamond, isEmerald, isOlympus)}>{roiDays}</td>
-                          <td className={styles.StatCell(isDiamond, isEmerald, isOlympus) + " border-l-2 border-gray-400"}>{preTax}%</td>
+                          <td
+                            className={styles.StatCell(isDiamond, isEmerald, isOlympus) + " border-l-2 border-gray-400"}>{preTax}%
+                          </td>
                           <td className={styles.StatCell(isDiamond, isEmerald, isOlympus)}>{dailyPre}</td>
                           <td className={styles.StatCell(isDiamond, isEmerald, isOlympus)}>
                             <div className="flex flex-row justify-between">
@@ -240,7 +246,9 @@ export default function Home() {
                               <div>{dailyPreUSD.toFixed(2)}</div>
                             </div>
                           </td>
-                          <td className={styles.StatCell(isDiamond, isEmerald, isOlympus) + " border-l-2 border-gray-400"}>{postTax}%</td>
+                          <td
+                            className={styles.StatCell(isDiamond, isEmerald, isOlympus) + " border-l-2 border-gray-400"}>{postTax}%
+                          </td>
                           <td className={styles.StatCell(isDiamond, isEmerald, isOlympus)}>{dailyPost}</td>
                           <td className={styles.StatCell(isDiamond, isEmerald, isOlympus)}>
                             <div className="flex flex-row justify-between">

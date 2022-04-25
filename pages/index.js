@@ -12,6 +12,7 @@ const manager = new PolarNodeManager(2.50, defaultNodeParams); //TODO get POLAR 
 
 export default function Home() {
 
+  const [polarPrice, setPolarPrice] = useState(0);
   const [nodes, setNodes] = useState([]);
   const [totals, setTotals] = useState({
     count: 0,
@@ -28,6 +29,9 @@ export default function Home() {
   const updateNodesState = () => {
     const nodes = manager.getNodes();
     setNodes(nodes);
+
+    const price = manager.getPolarPrice();
+    setPolarPrice(price);
   }
 
   const handleCountChange = (event, id) => {
@@ -51,6 +55,7 @@ export default function Home() {
   const onSubmit = data => null;
 
   useEffect(() => {
+    manager.setCurrentPolarPrice(setPolarPrice);
     manager.setAllNodeCounts(1);
     updateNodesState();
     nodes.map((n) => register(n.name));
@@ -130,7 +135,7 @@ export default function Home() {
                     className="ml-2 w-24 rounded-xl overflow-hidden text-center font-bold text-xl text-cyan-700 drop-shadow-lg pr-1"
                     name="polarPrice"
                     onChange={e => handlePriceChange(e)}
-                    defaultValue="2.44" type="number"/>
+                    value={polarPrice} type="number"/>
                 </div>
                 <p className="text-white font-semibold mb-4 leading-4 drop-shadow-lg max-w-xl">
                   Change the POLAR price above to see what your daily rewards could be if POLAR was a different price.

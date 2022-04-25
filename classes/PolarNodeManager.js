@@ -1,4 +1,5 @@
 import PolarNode from './PolarNode';
+import getCurrentPolarPrice from "../lib/getCurrentPolarPrice";
 
 class PolarNodeManager {
   polarPrice;
@@ -15,6 +16,17 @@ class PolarNodeManager {
       const nodeData = {...np, polarPrice: this.polarPrice, count: 0};
       return this.nodes.set(np.id, new PolarNode(nodeData));
     });
+  }
+
+  setCurrentPolarPrice(updateLocalPrice) {
+    getCurrentPolarPrice()
+      .then(price => {
+        this.setPolarPrice(price);
+        updateLocalPrice(price);
+      })
+      .catch(err => {
+        console.error("Error while fetching POLAR price:", err.message);
+      })
   }
 
   setPolarPrice(price) {
@@ -60,6 +72,10 @@ class PolarNodeManager {
 
   getNodes() {
     return Array.from(this.nodes.values());
+  }
+
+  getPolarPrice(){
+    return this.polarPrice;
   }
 }
 

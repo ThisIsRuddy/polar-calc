@@ -95,6 +95,7 @@ module.exports = {
         "70v": "70vw",
         "80v": "80vw",
         "90v": "90vw",
+        "95v": "95vw",
         "100v": "100vw",
       },
       minHeight: {

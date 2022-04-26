@@ -59,7 +59,7 @@ class PolarNodeManager {
 
     nodes.forEach(n => {
       results.count += n.count;
-      results.cost += n.cost;
+      results.cost += n.cost * n.count;
       results.reward += n.reward * n.count;
       results.totalPreRoiPolar += n.totalPreRoiPolar;
       results.totalPreRoiUSD += n.totalPreRoiUSD;

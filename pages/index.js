@@ -234,8 +234,8 @@ export default function Home() {
                     <tbody className="divide-y divide-gray-200">
                     {nodes.map((n) => {
                         const count = accurateRoundNumber(n.count);
-                        const cost = accurateRoundNumber(n.cost);
-                        const reward = accurateRoundNumber(n.reward);
+                        const cost = accurateRoundNumber(n.cost * count);
+                        const reward = accurateRoundNumber(n.reward * count);
                         const roiPercent = accurateRoundNumber(n.roiPercentage);
                         const roiDays = accurateRoundNumber(n.roiDays);
                         const preTax = accurateRoundNumber(n.preRoiTax);

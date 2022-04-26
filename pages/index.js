@@ -140,12 +140,13 @@ export default function Home() {
               <div className="mr-4">
                 <div className="flex flex-col md:flex-row mb-1">
                   <div className="flex flex-row">
-                    <div className="grow">
+                    <div className="grow self-center">
                       <h2
-                        className="text-xl md:text-2xl lg:text-3xl font-bold text-white m2-4 drop-shadow-lg leading-5 md:leading-4 lg:leading-3">POLAR
-                        Price $</h2>
+                        className="text-xl md:text-2xl lg:text-3xl font-bold text-white m2-4 drop-shadow-lg leading-5 md:leading-5 lg:leading-3">
+                        POLAR Price $
+                      </h2>
                     </div>
-                    <div className="">
+                    <div className="flex flex-col justify-center align-center">
                       <input
                         className="ml-1 w-28 rounded-xl overflow-hidden text-center font-bold md:text-lg lg:text-xl text-cyan-700 drop-shadow-lg pr-1"
                         name="polarPrice"
@@ -165,7 +166,7 @@ export default function Home() {
               <div>
                 <div className="flex flex-row mb-1">
                   <h2
-                    className="text-xl md:text-2xl lg:text-3xl font-bold text-white m2-4 drop-shadow-lg leading-5 md:leading-4 lg:leading-3">Reset
+                    className="text-xl md:text-2xl lg:text-3xl font-bold text-white m2-4 drop-shadow-lg leading-5 md:leading-5 lg:leading-3 self-center">Reset
                     Counts</h2>
                   <div>
                     <button

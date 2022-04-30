@@ -40,7 +40,6 @@ class PolarNodeManager {
           axios.get('/api/currencyRates')
             .then(({data}) => {
               const rate = data[currency];
-              console.log("Rate:", rate);
               if (!rate)
                 throw new Error("Failed to find currency in currency rates.");
 

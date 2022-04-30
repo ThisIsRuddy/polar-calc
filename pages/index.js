@@ -80,19 +80,25 @@ export default function Home() {
     StatHeaderCell: "py-2.5 px-3 text-sm font-bold bg-cyan-500 text-white drop-shadow-lg leading-3",
     NameFooterCell: "py-3 pl-4 pr-3 text-left text-md font-bold sm:pl-6 md:pl-0 bg-cyan-700 text-white drop-shadow-lg leading-3",
     StatFooterCell: "py-3 px-3 text-md font-bold bg-cyan-700 text-white drop-shadow-lg leading-3",
-    NameCell: (isDiamond, isEmerald, isOlympus) => classNames({
+    NameCell: (node) => classNames({
       "text-left whitespace-nowrap py-2 pl-4 pr-3 text-sm font-medium sm:pl-6 md:pl-0 font-semibold ": true,
-      "bg-cyan-500 text-white": isDiamond,
-      "bg-emerald-500 text-white": isEmerald,
-      "bg-orange-500 text-white border-t-2 border-gray-500": isOlympus,
-      "bg-gray-100 text-gray-600 border-t-2 border-gray-400": !isEmerald && !isDiamond && !isOlympus
+      "bg-gray-500 text-white": node.isSilver,
+      "bg-yellow-500 text-white": node.isGold,
+      "bg-cyan-500 text-white": node.isDiamond,
+      "bg-emerald-500 text-white": node.isEmerald,
+      "bg-red-500 text-white": node.isRuby,
+      "bg-orange-500 text-white border-t-2 border-gray-500": node.isOlympus,
+      "bg-gray-100 border-t-2 border-gray-400": !node.isSpecial
     }),
-    StatCell: (isDiamond, isEmerald, isOlympus) => classNames({
+    StatCell: (node) => classNames({
       "whitespace-nowrap py-2 px-3 text-sm text-black font-semibold": true,
-      "bg-cyan-200 text-cyan-800": isDiamond,
-      "bg-emerald-200 text-emerald-800": isEmerald,
-      "bg-orange-200 text-orange-800 border-t-2 border-gray-400": isOlympus,
-      "bg-gray-50 text-gray-800 border-t-2 border-gray-400": !isEmerald && !isDiamond && !isOlympus
+      "bg-gray-300 text-gray-800": node.isSilver,
+      "bg-yellow-200 text-yellow-800": node.isGold,
+      "bg-cyan-200 text-cyan-800": node.isDiamond,
+      "bg-emerald-200 text-emerald-800": node.isEmerald,
+      "bg-red-200 text-red-800": node.isRuby,
+      "bg-orange-200 text-orange-800 border-t-2 border-gray-400": node.isOlympus,
+      "bg-gray-50 border-t-2 border-gray-400": !node.isSpecial
     })
   };
 
@@ -267,43 +273,39 @@ export default function Home() {
                   const dailyPost = accurateRoundNumber(n.totalPostRoiPolar);
                   const dailyPostUSD = accurateRoundNumber(n.totalPostRoiUSD);
 
-                  const isDiamond = n.isDiamond;
-                  const isEmerald = n.isEmerald;
-                  const isOlympus = n.isOlympus;
-
                   return (<tr key={n.name}>
-                    <td className={styles.NameCell(isDiamond, isEmerald, isOlympus)}>
+                    <td className={styles.NameCell(n)}>
                       <span className="pl-4">{n.name}</span>
                     </td>
                     <td
-                      className={styles.StatCell(isDiamond, isEmerald, isOlympus) + " border-l-2 border-gray-400"}>
+                      className={styles.StatCell(n) + " border-l-2 border-gray-400"}>
                       <div className="rounded overflow-hidden">
                         <input className="w-10 overflow-hidden text-center font-bold" name={n.name}
                                onChange={e => handleCountChange(e, n.id)} value={count}
                                type="number"/>
                       </div>
                     </td>
-                    <td className={styles.StatCell(isDiamond, isEmerald, isOlympus)}>{cost}</td>
-                    <td className={styles.StatCell(isDiamond, isEmerald, isOlympus)}>{reward}</td>
+                    <td className={styles.StatCell(n)}>{cost}</td>
+                    <td className={styles.StatCell(n)}>{reward}</td>
                     <td
-                      className={styles.StatCell(isDiamond, isEmerald, isOlympus) + " border-l-2 border-gray-400"}>{roiPercent}%
+                      className={styles.StatCell(n) + " border-l-2 border-gray-400"}>{roiPercent}%
                     </td>
-                    <td className={styles.StatCell(isDiamond, isEmerald, isOlympus)}>{roiDays}</td>
+                    <td className={styles.StatCell(n)}>{roiDays}</td>
                     <td
-                      className={styles.StatCell(isDiamond, isEmerald, isOlympus) + " border-l-2 border-gray-400"}>{preTax}%
+                      className={styles.StatCell(n) + " border-l-2 border-gray-400"}>{preTax}%
                     </td>
-                    <td className={styles.StatCell(isDiamond, isEmerald, isOlympus)}>{dailyPre}</td>
-                    <td className={styles.StatCell(isDiamond, isEmerald, isOlympus)}>
+                    <td className={styles.StatCell(n)}>{dailyPre}</td>
+                    <td className={styles.StatCell(n)}>
                       <div className="flex flex-row justify-between">
                         <div>{currIcon}</div>
                         <div>{dailyPreUSD.toFixed(2)}</div>
                       </div>
                     </td>
                     <td
-                      className={styles.StatCell(isDiamond, isEmerald, isOlympus) + " border-l-2 border-gray-400"}>{postTax}%
+                      className={styles.StatCell(n) + " border-l-2 border-gray-400"}>{postTax}%
                     </td>
-                    <td className={styles.StatCell(isDiamond, isEmerald, isOlympus)}>{dailyPost}</td>
-                    <td className={styles.StatCell(isDiamond, isEmerald, isOlympus)}>
+                    <td className={styles.StatCell(n)}>{dailyPost}</td>
+                    <td className={styles.StatCell(n)}>
                       <div className="flex flex-row justify-between">
                         <div>{currIcon}</div>
                         <div>{dailyPostUSD.toFixed(2)}</div>

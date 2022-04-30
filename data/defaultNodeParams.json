@@ -11,6 +11,24 @@
   {
     "id": 2,
     "tier": 1,
+    "name": "Silver Fuji",
+    "reward": 0.7,
+    "cost": 35,
+    "preRoiTax": 10,
+    "postRoiTax": 2
+  },
+  {
+    "id": 3,
+    "tier": 1,
+    "name": "Gold Fuji",
+    "reward": 0.875,
+    "cost": 35,
+    "preRoiTax": 10,
+    "postRoiTax": 2
+  },
+  {
+    "id": 4,
+    "tier": 1,
     "name": "Diamond Fuji",
     "reward": 1.225,
     "cost": 90,
@@ -18,7 +36,7 @@
     "postRoiTax": 2
   },
   {
-    "id": 3,
+    "id": 5,
     "tier": 1,
     "name": "Emerald Fuji",
     "reward": 1.4,
@@ -27,7 +45,7 @@
     "postRoiTax": 2
   },
   {
-    "id": 4,
+    "id": 6,
     "tier": 2,
     "name": "Mont Blanc",
     "reward": 0.99,
@@ -36,7 +54,25 @@
     "postRoiTax": 3
   },
   {
-    "id": 5,
+    "id": 7,
+    "tier": 2,
+    "name": "Silver Mont Blanc",
+    "reward": 1.32,
+    "cost": 65,
+    "preRoiTax": 15,
+    "postRoiTax": 3
+  },
+  {
+    "id": 8,
+    "tier": 2,
+    "name": "Gold Mont Blanc",
+    "reward": 1.65,
+    "cost": 65,
+    "preRoiTax": 15,
+    "postRoiTax": 3
+  },
+  {
+    "id": 9,
     "tier": 2,
     "name": "Diamond Mont Blanc",
     "reward": 2,
@@ -45,7 +81,7 @@
     "postRoiTax": 3
   },
   {
-    "id": 6,
+    "id": 10,
     "tier": 2,
     "name": "Emerald Mont Blanc",
     "reward": 2.5,
@@ -54,7 +90,7 @@
     "postRoiTax": 3
   },
   {
-    "id": 7,
+    "id": 11,
     "tier": 3,
     "name": "Kilimanjaro",
     "reward": 4.99,
@@ -63,7 +99,25 @@
     "postRoiTax": 5
   },
   {
-    "id": 8,
+    "id": 12,
+    "tier": 3,
+    "name": "Silver Kilimanjaro",
+    "reward": 5.88,
+    "cost": 265,
+    "preRoiTax": 17,
+    "postRoiTax": 5
+  },
+  {
+    "id": 13,
+    "tier": 3,
+    "name": "Gold Kilimanjaro",
+    "reward": 7,
+    "cost": 265,
+    "preRoiTax": 17,
+    "postRoiTax": 5
+  },
+  {
+    "id": 14,
     "tier": 3,
     "name": "Diamond Kilimanjaro",
     "reward": 9.45,
@@ -72,7 +126,7 @@
     "postRoiTax": 5
   },
   {
-    "id": 9,
+    "id": 15,
     "tier": 3,
     "name": "Emerald Kilimanjaro",
     "reward": 11.76,
@@ -81,7 +135,7 @@
     "postRoiTax": 5
   },
   {
-    "id": 10,
+    "id": 16,
     "tier": 4,
     "name": "Ushuaia",
     "reward": 9.19,
@@ -90,7 +144,25 @@
     "postRoiTax": 7
   },
   {
-    "id": 11,
+    "id": 17,
+    "tier": 4,
+    "name": "Silver Ushuaia",
+    "reward": 10.75,
+    "cost": 430,
+    "preRoiTax": 20,
+    "postRoiTax": 7
+  },
+  {
+    "id": 18,
+    "tier": 4,
+    "name": "Gold Ushuaia",
+    "reward": 12.3,
+    "cost": 430,
+    "preRoiTax": 20,
+    "postRoiTax": 7
+  },
+  {
+    "id": 19,
     "tier": 4,
     "name": "Diamond Ushuaia",
     "reward": 15.35,
@@ -99,7 +171,7 @@
     "postRoiTax": 7
   },
   {
-    "id": 12,
+    "id": 20,
     "tier": 4,
     "name": "Emerald Ushuaia",
     "reward": 18.45,
@@ -108,7 +180,7 @@
     "postRoiTax": 7
   },
   {
-    "id": 13,
+    "id": 21,
     "tier": 5,
     "name": "Everest",
     "reward": 34.99,
@@ -117,7 +189,25 @@
     "postRoiTax": 9
   },
   {
-    "id": 14,
+    "id": 22,
+    "tier": 5,
+    "name": "Silver Everest",
+    "reward": 37.5,
+    "cost": 1050,
+    "preRoiTax": 22,
+    "postRoiTax": 9
+  },
+  {
+    "id": 23,
+    "tier": 5,
+    "name": "Gold Everest",
+    "reward": 40,
+    "cost": 1050,
+    "preRoiTax": 22,
+    "postRoiTax": 9
+  },
+  {
+    "id": 24,
     "tier": 5,
     "name": "Diamond Everest",
     "reward": 45,
@@ -126,7 +216,7 @@
     "postRoiTax": 9
   },
   {
-    "id": 15,
+    "id": 25,
     "tier": 5,
     "name": "Emerald Everest",
     "reward": 52.5,
@@ -135,7 +225,16 @@
     "postRoiTax": 9
   },
   {
-    "id": 16,
+    "id": 26,
+    "tier": 5,
+    "name": "Ruby Everest",
+    "reward": 56,
+    "cost": 1150,
+    "preRoiTax": 22,
+    "postRoiTax": 9
+  },
+  {
+    "id": 27,
     "tier": 6,
     "name": "Olympus",
     "reward": 120,

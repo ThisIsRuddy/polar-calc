@@ -175,10 +175,10 @@ export default function Home() {
                     value={polarPrice} type="number"/>
                 </div>
               </div>
-              <button className="ml-2 font-bold text-white underline"
-                      onClick={() => resetPolarPrice()}>
+              {currency === 'USD' && <button className="ml-2 font-bold text-white underline"
+                                             onClick={() => resetPolarPrice()}>
                 (click for latest price)
-              </button>
+              </button>}
             </div>
             <p className="text-white font-semibold mb-4 leading-4 drop-shadow-lg max-w-xl">
               Change the POLAR price above to see what your daily rewards could be if POLAR was a different price.

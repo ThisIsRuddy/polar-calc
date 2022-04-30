@@ -169,7 +169,7 @@ export default function Home() {
                 </div>
                 <div className="flex flex-col justify-center align-center">
                   <input
-                    className="ml-1 w-28 rounded-xl overflow-hidden text-center font-bold md:text-lg lg:text-xl text-cyan-700 drop-shadow-lg pr-1"
+                    className="ml-1 w-28 px-2 rounded-xl overflow-hidden text-center font-bold md:text-lg lg:text-xl text-cyan-700 drop-shadow-lg pr-1"
                     name="polarPrice"
                     onChange={e => handlePriceChange(e)}
                     value={polarPrice} type="number"/>

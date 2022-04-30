@@ -1,13 +1,8 @@
-import fs from 'fs';
-import util from 'util';
 import axios from 'axios';
+import cache from 'memory-cache';
 
 import minutesBetween from '../../lib/minutesBetween';
 import addMinutes from '../../lib/addMinutes';
-
-const readFile = util.promisify(fs.readFile);
-const statFile = util.promisify(fs.stat);
-const writeFile = util.promisify(fs.writeFile);
 
 const fetchCurrencyRates = async (baseCurrency, symbols) => await axios.get('https://api.apilayer.com/exchangerates_data/latest', {
   timeout: 5000,
@@ -21,15 +16,6 @@ const fetchCurrencyRates = async (baseCurrency, symbols) => await axios.get('htt
   }
 });
 
-const readCachedRates = async () => {
-  const data = await readFile(__dirname + '/currencyRates.json');
-  return JSON.parse(data);
-}
-
-const statCachedRates = async () => await statFile(__dirname + '/currencyRates.json');
-
-const cacheRates = async (rates) => await writeFile(__dirname + '/currencyRates.json', JSON.stringify(rates, null, 2));
-
 const updateRates = async () => {
   const {data} = await fetchCurrencyRates('USD', [
     "AUD", "GBP", "CAD", "EUR", "HKD", "NZD", "CHF", "AED"
@@ -40,31 +26,29 @@ const updateRates = async () => {
   const rates = {
     ...data['rates'],
     tlu: now,
-    ttu: addMinutes(now, 180),
-    mtu: "180 min"
+    ttu: addMinutes(now, 180)
   }
-  await cacheRates(rates);
-  console.info("[currencyRates:updateRates] Write rates: OK");
+  console.info("[currencyRates:rates]", rates);
+  cache.put('currencyRates', rates);
 
-  return rates;
+  return {
+    ...rates,
+    mtu: 180 + " min"
+  };
 }
 
 const getRates = async () => {
   let rates;
 
-  try {
-    rates = await readCachedRates();
-    console.info("[currencyRates:getRates] Read cached rates: OK");
-  } catch (e) {
+  rates = cache.get('currencyRates');
+  if (!rates) {
     console.error("[currencyRates:getRates] Read cached rates: FAIL");
     return await updateRates();
   }
+  console.info("[currencyRates:getRates] Read cached rates: OK");
 
-  const stats = await statCachedRates();
-  console.info("[currencyRates:getRates] Stat cached rates: OK");
   const now = new Date();
-  const diff = minutesBetween(stats.mtime, now);
-
+  const diff = minutesBetween(rates.tlu, now);
   if (diff > 180)
     rates = await updateRates();
 

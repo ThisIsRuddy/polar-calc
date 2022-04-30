@@ -32,7 +32,7 @@ const cacheRates = async (rates) => await writeFile(__dirname + '/currencyRates.
 
 const updateRates = async () => {
   const {data} = await fetchCurrencyRates('USD', [
-    "AUD", "BTC", "GBP", "CAD", "EUR", "HKD", "NZD", "CHF", "AED"
+    "AUD", "GBP", "CAD", "EUR", "HKD", "NZD", "CHF", "AED"
   ])
   console.info("[currencyRates:updateRates] Fetch rates: OK");
 

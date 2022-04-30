@@ -57,7 +57,7 @@ export default function Home() {
   const resetFormFields = () => nodes.forEach(n => setValue(n.name, 0));
 
   const resetPolarPrice = () => {
-    manager.setCurrentPolarPrice(setPolarPrice);
+    manager.setCurrentPolarPriceConverted(currency, setPolarPrice);
     updateNodesState();
   };
 
@@ -175,10 +175,10 @@ export default function Home() {
                     value={polarPrice} type="number"/>
                 </div>
               </div>
-              {currency === 'USD' && <button className="ml-2 font-bold text-white underline"
-                                             onClick={() => resetPolarPrice()}>
+              <button className="ml-2 font-bold text-white underline"
+                      onClick={() => resetPolarPrice()}>
                 (click for latest price)
-              </button>}
+              </button>
             </div>
             <p className="text-white font-semibold mb-4 leading-4 drop-shadow-lg max-w-xl">
               Change the POLAR price above to see what your daily rewards could be if POLAR was a different price.

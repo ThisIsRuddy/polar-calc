@@ -45,6 +45,10 @@ const updateRates = async () => {
     ttu: addMinutes(now, 180),
     mtu: "180 min"
   }
+  console.info("[currencyRates:rates]", rates);
+
+
+  console.info("[currencyRates:updateRates:path]", __dirname + '/currencyRates.json');
   await cacheRates(rates);
   console.info("[currencyRates:updateRates] Write rates: OK");
 

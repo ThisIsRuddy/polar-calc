@@ -9,6 +9,8 @@ const readFile = util.promisify(fs.readFile);
 const statFile = util.promisify(fs.stat);
 const writeFile = util.promisify(fs.writeFile);
 
+console.log("process.env.APILAYER_API_KEY", process.env.APILAYER_API_KEY);
+
 const fetchCurrencyRates = async (baseCurrency, symbols) => await axios.get('https://api.apilayer.com/exchangerates_data/latest', {
   timeout: 5000,
   redirect: 'follow',

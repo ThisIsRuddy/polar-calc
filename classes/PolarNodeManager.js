@@ -1,5 +1,6 @@
 import PolarNode from './PolarNode';
 import getCurrentPolarPrice from "../lib/getCurrentPolarPrice";
+import axios from "axios";
 
 class PolarNodeManager {
   polarPrice;
@@ -23,6 +24,32 @@ class PolarNodeManager {
       .then(price => {
         this.setPolarPrice(price);
         updateLocalPrice(price);
+      })
+      .catch(err => {
+        console.error("Error while fetching POLAR price:", err.message);
+      })
+  }
+
+  setCurrentPolarPriceConverted(currency, updateLocalPrice) {
+    getCurrentPolarPrice()
+      .then(polarPrice => {
+        if (currency === 'USD') {
+          this.setPolarPrice(polarPrice);
+          updateLocalPrice(polarPrice);
+        } else {
+          axios.get('/api/currencyRates')
+            .then(({data}) => {
+              const rate = data[currency];
+              console.log("Rate:", rate);
+              if (!rate)
+                throw new Error("Failed to find currency in currency rates.");
+
+              const price = polarPrice * rate;
+              this.setPolarPrice(price);
+              updateLocalPrice(price);
+            })
+            .catch(err => console.error(err.message));
+        }
       })
       .catch(err => {
         console.error("Error while fetching POLAR price:", err.message);
@@ -74,7 +101,7 @@ class PolarNodeManager {
     return Array.from(this.nodes.values());
   }
 
-  getPolarPrice(){
+  getPolarPrice() {
     return this.polarPrice;
   }
 }

@@ -38,7 +38,6 @@ export default function Home() {
   };
 
   const handleCurrencyChange = (event) => {
-    console.log("value:", event.target.value);
     setCurrency(event.target.value);
     manager.setCurrentPolarPriceConverted(event.target.value, setPolarPrice);
     updateNodesState();

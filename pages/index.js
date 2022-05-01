@@ -87,7 +87,8 @@ export default function Home() {
       "bg-cyan-500 text-white": node.isDiamond,
       "bg-emerald-500 text-white": node.isEmerald,
       "bg-red-500 text-white": node.isRuby,
-      "bg-orange-500 text-white border-t-2 border-gray-500": node.isOlympus,
+      "bg-black text-white": node.isBlack,
+      "bg-orange-500 text-white": node.isEgg,
       "bg-gray-100 border-t-2 border-gray-400": !node.isSpecial
     }),
     StatCell: (node) => classNames({
@@ -97,7 +98,8 @@ export default function Home() {
       "bg-cyan-200 text-cyan-800": node.isDiamond,
       "bg-emerald-200 text-emerald-800": node.isEmerald,
       "bg-red-200 text-red-800": node.isRuby,
-      "bg-orange-200 text-orange-800 border-t-2 border-gray-400": node.isOlympus,
+      "bg-gray-400": node.isBlack,
+      "bg-orange-200 text-orange-800": node.isEgg,
       "bg-gray-50 border-t-2 border-gray-400": !node.isSpecial
     })
   };

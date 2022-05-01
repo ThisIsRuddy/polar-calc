@@ -241,5 +241,41 @@
     "cost": 3000,
     "preRoiTax": 30,
     "postRoiTax": 14
+  },
+  {
+    "id": 28,
+    "tier": 6,
+    "name": "Diamond Olympus",
+    "reward": 135,
+    "cost": 3500,
+    "preRoiTax": 30,
+    "postRoiTax": 14
+  },
+  {
+    "id": 29,
+    "tier": 6,
+    "name": "Emerald Olympus",
+    "reward": 150,
+    "cost": 3500,
+    "preRoiTax": 30,
+    "postRoiTax": 14
+  },
+  {
+    "id": 30,
+    "tier": 6,
+    "name": "Black Olympus",
+    "reward": 165,
+    "cost": 3500,
+    "preRoiTax": 30,
+    "postRoiTax": 14
+  },
+  {
+    "id": 31,
+    "tier": 6,
+    "name": "Olympus Egg",
+    "reward": 180,
+    "cost": 3500,
+    "preRoiTax": 30,
+    "postRoiTax": 14
   }
 ]

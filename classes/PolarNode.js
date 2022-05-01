@@ -37,10 +37,19 @@ class PolarNode {
     this.isGold = name.includes('Gold');
     this.isDiamond = name.includes('Diamond');
     this.isEmerald = name.includes('Emerald');
-    this.isOlympus = name === 'Olympus';
     this.isRuby = name.includes('Ruby');
+    this.isBlack = name.includes('Black');
+    this.isEgg = name.includes('Egg');
 
-    this.isSpecial = [this.isSilver, this.isGold, this.isDiamond, this.isEmerald, this.isRuby, this.isOlympus].some(i => i === true);
+    this.isSpecial = [
+      this.isSilver,
+      this.isGold,
+      this.isDiamond,
+      this.isEmerald,
+      this.isRuby,
+      this.isBlack,
+      this.isEgg
+    ].some(i => i === true);
 
     this.updateTotals();
   }

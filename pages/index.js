@@ -146,7 +146,7 @@ export default function Home() {
       {nodes && <main>
 
         <section className="flex flex-row justify-center mb-2">
-          <div className="flex flex-col mr-2">
+          <div className="flex flex-col mr-2 hidden">
             <label htmlFor="currency" className="text-white"><b>Currency</b></label>
             <select name="currency"
                     className="font-bold cursor-not-allowed"

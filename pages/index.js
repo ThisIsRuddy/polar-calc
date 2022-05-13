@@ -230,7 +230,7 @@ export default function Home() {
           </h2>
         </section>
 
-        <section className="overflow-x-auto drop-shadow-lg mb-2 rounded overflow-hidden ring-2 ring-white">
+        <section className="overflow-x-auto drop-shadow-lg mb-2 rounded overflow-hidden">
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="mx-auto max-w-90v overflow-x-auto rounded overflow-hidden">
               <table

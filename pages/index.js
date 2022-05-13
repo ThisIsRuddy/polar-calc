@@ -212,18 +212,24 @@ export default function Home() {
         </section>
 
         <section className="text-white font-bold drop-shadow-2xl w-full bg-pink-600 rounded-lg px-4 py-2 mb-4 ring-2 ring-white">
-          <h2 className="">
-            UPDATE: The figures calculated below include the new temporary reduced reward & increased post ROI tax rates which will be implemented soon
+          <h2 className="drop-shadow-lg">
+            🚀 UPDATE: The figures calculated below include the new temporary reduced reward & increased post ROI tax rates which will be implemented soon
           </h2>
         </section>
 
         <section className="text-black font-bold drop-shadow-2xl w-full bg-yellow-400 rounded-lg px-4 py-2 mb-4 ring-2 ring-black">
-          <h2 className="">
-            WARNING!! ENSURE YOU CLAIM YOUR PENDING REWARDS BEFORE THE NEW TAX RATES ARE IMPLEMENTED OR YOU WILL LOSE THEM!
+          <h2 className="drop-shadow-lg">
+            ⚠ WARNING!! ENSURE YOU CLAIM YOUR PENDING REWARDS BEFORE THE NEW TAX RATES ARE IMPLEMENTED OR YOU WILL LOSE THEM!
           </h2>
         </section>
 
-        <section className="overflow-x-auto drop-shadow-lg mb-2">
+        <section className="text-white font-bold drop-shadow-2xl w-full bg-purple-500 rounded-lg px-4 py-2 mb-4 ring-2 ring-white">
+          <h2 className="drop-shadow-lg">
+            😒 ISSUE! I am aware the currency converter is not working but this is because I am being rate limited 😅 I will replace the API soon 💝
+          </h2>
+        </section>
+
+        <section className="overflow-x-auto drop-shadow-lg mb-2 rounded overflow-hidden ring-2 ring-white">
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="mx-auto max-w-90v overflow-x-auto rounded overflow-hidden">
               <table

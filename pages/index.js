@@ -149,10 +149,11 @@ export default function Home() {
           <div className="flex flex-col mr-2">
             <label htmlFor="currency" className="text-white"><b>Currency</b></label>
             <select name="currency"
-                    className="font-bold"
+                    className="font-bold cursor-not-allowed"
                     onInput={e => handleCurrencyChange(e)}
                     value={currency}
                     {...register("currency")}
+              disabled
             >
               <option value="USD">USD</option>
               <option value="GBP">GBP</option>

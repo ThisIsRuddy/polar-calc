@@ -7,7 +7,6 @@ import classNames from 'classnames';
 import PolarNodeManager from '../classes/PolarNodeManager';
 import defaultNodeParams from '../data/defaultNodeParams.json';
 import accurateRoundNumber from '../lib/accurateRoundNumber';
-import axios from "axios";
 
 const manager = new PolarNodeManager(2.50, defaultNodeParams); //TODO get POLAR price
 
@@ -107,9 +106,9 @@ export default function Home() {
   return (<div className="flex flex-col justify-center bg-cyan-600 w-full px-4">
     <div className="mt-4 mb-6 flex flex-col mx-auto">
       <Head>
-        <title>POLAR Rewards Calculator by ThisIsRuddy</title>
+        <title>POLAR Rewards Calculator by @ThisIsRuddy</title>
         <meta name="description"
-              content="A quick react app built for calculating POLAR nodes rewards made by ThisIsRuddy! :)"/>
+              content="A quick react app built for calculating POLAR nodes rewards made by @ThisIsRuddy! :)"/>
         <link rel="icon" href="/favicon.ico"/>
       </Head>
 
@@ -139,7 +138,7 @@ export default function Home() {
           <p className="text-white font-semibold mb-4 text-center leading-4 md:leading-3">
             <span className="text-sm">Made by</span>
             <br/>
-            ThisIsRuddy!😁
+            @ThisIsRuddy 😁
           </p>
         </a>
       </header>
@@ -210,6 +209,18 @@ export default function Home() {
               This handy button should reset all the node counts back 0 to save you some hassle.
             </p>
           </div>
+        </section>
+
+        <section className="text-white font-bold drop-shadow-2xl w-full bg-pink-600 rounded-lg px-4 py-2 mb-4 ring-2 ring-white">
+          <h2 className="">
+            UPDATE: The figures calculated below include the new temporary reduced reward & increased post ROI tax rates which will be implemented soon
+          </h2>
+        </section>
+
+        <section className="text-black font-bold drop-shadow-2xl w-full bg-yellow-400 rounded-lg px-4 py-2 mb-4 ring-2 ring-black">
+          <h2 className="">
+            WARNING!! ENSURE YOU CLAIM YOUR PENDING REWARDS BEFORE THE NEW TAX RATES ARE IMPLEMENTED OR YOU WILL LOSE THEM!
+          </h2>
         </section>
 
         <section className="overflow-x-auto drop-shadow-lg mb-2">
@@ -366,7 +377,7 @@ export default function Home() {
       <footer className="mt-4">
         <a href="https://discord.gg/c54JAmQd" target="_blank" rel="noreferrer">
           <p className="font-bold text-white text-center drop-shadow-lg">
-            Made by ThisIsRuddy, click me to join the POLAR Discord server with the rest of the POLAR Fam and say hi!
+            Made by @ThisIsRuddy, click me to join the POLAR Discord server with the rest of the POLAR Fam and say hi!
             😁
           </p>
         </a>

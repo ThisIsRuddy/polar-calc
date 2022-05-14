@@ -146,14 +146,13 @@ export default function Home() {
       {nodes && <main>
 
         <section className="flex flex-row justify-center mb-2">
-          <div className="flex flex-col mr-2 hidden">
+          <div className="flex flex-col mr-2">
             <label htmlFor="currency" className="text-white"><b>Currency</b></label>
             <select name="currency"
-                    className="font-bold cursor-not-allowed"
+                    className="font-bold"
                     onInput={e => handleCurrencyChange(e)}
                     value={currency}
                     {...register("currency")}
-              disabled
             >
               <option value="USD">USD</option>
               <option value="GBP">GBP</option>
@@ -221,12 +220,6 @@ export default function Home() {
         <section className="text-black font-bold drop-shadow-2xl w-full bg-yellow-400 rounded-lg px-4 py-2 mb-4 ring-2 ring-black">
           <h2 className="drop-shadow-lg">
             ⚠ WARNING!! ENSURE YOU CLAIM YOUR PENDING REWARDS BEFORE THE NEW TAX RATES ARE IMPLEMENTED OR YOU WILL LOSE THEM!
-          </h2>
-        </section>
-
-        <section className="text-white font-bold drop-shadow-2xl w-full bg-purple-500 rounded-lg px-4 py-2 mb-4 ring-2 ring-white">
-          <h2 className="drop-shadow-lg">
-            😒 ISSUE! I am aware the currency converter is not working but this is because I am being rate limited 😅 I will replace the API soon 💝
           </h2>
         </section>
 

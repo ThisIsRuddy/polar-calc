@@ -50,7 +50,12 @@ const getRates = async () => {
   const now = new Date();
   const diff = minutesBetween(rates.tlu, now);
   if (diff > 180)
-    rates = await updateRates();
+    try {
+      rates = await updateRates();
+      console.info("Successfully updated currency rates.");
+    } catch (e) {
+      console.error("Failed to update currency rates:", e.message);
+    }
 
   return {
     ...rates,

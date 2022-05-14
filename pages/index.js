@@ -7,7 +7,6 @@ import classNames from 'classnames';
 import PolarNodeManager from '../classes/PolarNodeManager';
 import defaultNodeParams from '../data/defaultNodeParams.json';
 import accurateRoundNumber from '../lib/accurateRoundNumber';
-import axios from "axios";
 
 const manager = new PolarNodeManager(2.50, defaultNodeParams); //TODO get POLAR price
 

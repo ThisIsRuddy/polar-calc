@@ -86,7 +86,8 @@ export default function Home() {
       "bg-cyan-500 text-white": node.isDiamond,
       "bg-emerald-500 text-white": node.isEmerald,
       "bg-red-500 text-white": node.isRuby,
-      "bg-orange-500 text-white border-t-2 border-gray-500": node.isOlympus,
+      "bg-black text-white": node.isBlack,
+      "bg-orange-500 text-white": node.isEgg,
       "bg-gray-100 border-t-2 border-gray-400": !node.isSpecial
     }),
     StatCell: (node) => classNames({
@@ -96,7 +97,8 @@ export default function Home() {
       "bg-cyan-200 text-cyan-800": node.isDiamond,
       "bg-emerald-200 text-emerald-800": node.isEmerald,
       "bg-red-200 text-red-800": node.isRuby,
-      "bg-orange-200 text-orange-800 border-t-2 border-gray-400": node.isOlympus,
+      "bg-gray-400": node.isBlack,
+      "bg-orange-200 text-orange-800": node.isEgg,
       "bg-gray-50 border-t-2 border-gray-400": !node.isSpecial
     })
   };
@@ -104,9 +106,9 @@ export default function Home() {
   return (<div className="flex flex-col justify-center bg-cyan-600 w-full px-4">
     <div className="mt-4 mb-6 flex flex-col mx-auto">
       <Head>
-        <title>POLAR Rewards Calculator by ThisIsRuddy</title>
+        <title>POLAR Rewards Calculator by @ThisIsRuddy</title>
         <meta name="description"
-              content="A quick react app built for calculating POLAR nodes rewards made by ThisIsRuddy! :)"/>
+              content="A quick react app built for calculating POLAR nodes rewards made by @ThisIsRuddy! :)"/>
         <link rel="icon" href="/favicon.ico"/>
       </Head>
 
@@ -136,7 +138,7 @@ export default function Home() {
           <p className="text-white font-semibold mb-4 text-center leading-4 md:leading-3">
             <span className="text-sm">Made by</span>
             <br/>
-            ThisIsRuddy!😁
+            @ThisIsRuddy 😁
           </p>
         </a>
       </header>
@@ -209,7 +211,19 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="overflow-x-auto drop-shadow-lg mb-2">
+        <section className="text-white font-bold drop-shadow-2xl w-full bg-pink-600 rounded-lg px-4 py-2 mb-4 ring-2 ring-white">
+          <h2 className="drop-shadow-lg">
+            🚀 UPDATE: The figures calculated below include the new temporary reduced reward & increased post ROI tax rates which will be implemented soon
+          </h2>
+        </section>
+
+        <section className="text-black font-bold drop-shadow-2xl w-full bg-yellow-400 rounded-lg px-4 py-2 mb-4 ring-2 ring-black">
+          <h2 className="drop-shadow-lg">
+            ⚠ WARNING!! ENSURE YOU CLAIM YOUR PENDING REWARDS BEFORE THE NEW TAX RATES ARE IMPLEMENTED OR YOU WILL LOSE THEM!
+          </h2>
+        </section>
+
+        <section className="overflow-x-auto drop-shadow-lg mb-2 rounded overflow-hidden">
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="mx-auto max-w-90v overflow-x-auto rounded overflow-hidden">
               <table
@@ -363,7 +377,7 @@ export default function Home() {
       <footer className="mt-4">
         <a href="https://discord.gg/c54JAmQd" target="_blank" rel="noreferrer">
           <p className="font-bold text-white text-center drop-shadow-lg">
-            Made by ThisIsRuddy, click me to join the POLAR Discord server with the rest of the POLAR Fam and say hi!
+            Made by @ThisIsRuddy, click me to join the POLAR Discord server with the rest of the POLAR Fam and say hi!
             😁
           </p>
         </a>

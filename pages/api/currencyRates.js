@@ -1,30 +1,31 @@
-import axios from 'axios';
 import cache from 'memory-cache';
 
 import minutesBetween from '../../lib/minutesBetween';
 import addMinutes from '../../lib/addMinutes';
+import getCurrencyRate from '../../lib/getCurrencyRate';
 
-const fetchCurrencyRates = async (baseCurrency, symbols) => await axios.get('https://api.apilayer.com/exchangerates_data/latest', {
-  timeout: 5000,
-  redirect: 'follow',
-  headers: {
-    apikey: process.env.APILAYER_API_KEY
-  },
-  params: {
-    base: baseCurrency,
-    symbols: symbols.join(',')
-  }
-});
+const fetchCurrencyRates = async (baseCurrency, symbols) => {
+  const rates = {};
+  const jobs = symbols.map(async (symbol) => {
+    const rate = await getCurrencyRate(baseCurrency, symbol);
+    if (rate)
+      rates[symbol] = rate;
+  });
+
+  await Promise.all(jobs);
+
+  return rates;
+}
 
 const updateRates = async () => {
-  const {data} = await fetchCurrencyRates('USD', [
+  const currencyRates = await fetchCurrencyRates('USD', [
     "AUD", "GBP", "CAD", "EUR", "HKD", "NZD", "CHF", "AED"
   ])
   console.info("[currencyRates:updateRates] Fetch rates: OK");
 
   const now = new Date();
   const rates = {
-    ...data['rates'],
+    ...currencyRates,
     tlu: now,
     ttu: addMinutes(now, 180)
   }

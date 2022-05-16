@@ -217,12 +217,6 @@ export default function Home() {
           </h2>
         </section>
 
-        <section className="text-black font-bold drop-shadow-2xl w-full bg-yellow-400 rounded-lg px-4 py-2 mb-4 ring-2 ring-black">
-          <h2 className="drop-shadow-lg">
-            ⚠ WARNING!! ENSURE YOU CLAIM YOUR REWARDS BEFORE THE NEW TAX RATES ARE LIVE OR YOUR REWARDS WILL REDUCE`!
-          </h2>
-        </section>
-
         <section className="overflow-x-auto drop-shadow-lg mb-2 rounded overflow-hidden">
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="mx-auto max-w-90v overflow-x-auto rounded overflow-hidden">

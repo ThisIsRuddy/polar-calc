@@ -213,7 +213,7 @@ export default function Home() {
 
         <section className="text-white font-bold drop-shadow-2xl w-full bg-pink-600 rounded-lg px-4 py-2 mb-4 ring-2 ring-white">
           <h2 className="drop-shadow-lg">
-            🚀 UPDATE: The figures calculated below include the new temporary reduced reward & increased post ROI tax rates which will be implemented soon
+            🚀 23/05/22 UPDATE: The figures calculated below include the new reduced reward & tax rates
           </h2>
         </section>
 

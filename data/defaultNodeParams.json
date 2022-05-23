@@ -4,7 +4,7 @@
     "tier": 1,
     "name": "Fuji",
     "reward": 0.2,
-    "rewardBoost": null,
+    "rewardBoost": 0,
     "cost": 35,
     "preRoiTax": 10,
     "postRoiTax": 3.3
@@ -54,7 +54,7 @@
     "tier": 2,
     "name": "Mont Blanc",
     "reward": 0.6,
-    "rewardBoost": null,
+    "rewardBoost": 0,
     "cost": 65,
     "preRoiTax": 15,
     "postRoiTax": 4.95
@@ -104,7 +104,7 @@
     "tier": 3,
     "name": "Kilimanjaro",
     "reward": 3.2,
-    "rewardBoost": null,
+    "rewardBoost": 0,
     "cost": 265,
     "preRoiTax": 17,
     "postRoiTax": 8.25
@@ -154,7 +154,7 @@
     "tier": 4,
     "name": "Ushuaia",
     "reward": 6,
-    "rewardBoost": null,
+    "rewardBoost": 0,
     "cost": 430,
     "preRoiTax": 20,
     "postRoiTax": 12
@@ -204,7 +204,7 @@
     "tier": 5,
     "name": "Everest",
     "reward": 20,
-    "rewardBoost": null,
+    "rewardBoost": 0,
     "cost": 1050,
     "preRoiTax": 22,
     "postRoiTax": 14.85
@@ -253,7 +253,7 @@
     "id": 26,
     "tier": 5,
     "name": "Ruby Everest",
-    "reward": null,
+    "reward": 32.00914547,
     "rewardBoost": 0.600457274,
     "cost": 1150,
     "preRoiTax": 22,
@@ -264,7 +264,7 @@
     "tier": 6,
     "name": "Olympus",
     "reward": 75,
-    "rewardBoost": null,
+    "rewardBoost": 0,
     "cost": 3000,
     "preRoiTax": 30,
     "postRoiTax": 23.1
